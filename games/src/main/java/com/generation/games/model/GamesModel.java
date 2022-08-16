@@ -21,8 +21,12 @@ public class GamesModel {
 	private String game;
 	
 	@ManyToOne
-	@JsonIgnoreProperties("games")
+	@JsonIgnoreProperties("game")
 	private CategoriaModel categoria;
+	
+	@ManyToOne
+	@JsonIgnoreProperties("game")
+	private UsuarioModel usuario;
 
 	public Long getId() {
 		return id;
@@ -46,6 +50,14 @@ public class GamesModel {
 
 	public void setCategoria(CategoriaModel categoria) {
 		this.categoria = categoria;
+	}
+
+	public UsuarioModel getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(UsuarioModel usuario) {
+		this.usuario = usuario;
 	}
 
 	
